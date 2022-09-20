@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ODataClient, ODataServiceFactory } from "angular-odata";
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -7,7 +8,7 @@ import { ODataClient, ODataServiceFactory } from "angular-odata";
 })
 export class ODataBackendService {
   constructor(private factory: ODataServiceFactory) { }
-  query() {
+  query() : Observable<any> {
 
     // Use OData Service Factory
     let airportsService = this.factory.entitySet(
@@ -15,12 +16,7 @@ export class ODataBackendService {
       "Microsoft.OData.SampleService.Models.TripPin.Airport"
     );
     let airports = airportsService.entities();
-
-    // Fetch airports
-    airports.fetch().subscribe(({ entities }) => {
-      console.log("Airports: ", entities);
-    });
-
+    return airports.fetch();
   }
 
 }

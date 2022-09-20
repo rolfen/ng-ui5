@@ -1,9 +1,53 @@
 
 <div class="header">
-	<span>Products table - resize your browser to make some columns pop-in</span>
-	<button id="toggleSticky" style="height: 32px">Toggle Sticky Column Header</button>
+
+
 </div>
 
+<div class="filters">
+    <div class="filter">
+        <ui5-label for="workOrderNumber" show-colon>Work Order Number</ui5-label>
+        <ui5-input value="" id="workOrderNumber"></ui5-input>    
+    </div>
+    
+    <div class="filter">
+        <ui5-label for="description" show-colon>Description</ui5-label>
+        <ui5-input value="" id="description"></ui5-input>    
+    </div>
+
+    <div class="filter">
+        <ui5-label type="" for="userStatus" show-colon>User Status</ui5-label>
+        <ui5-select value="" id="userStatus"></ui5-select>            
+    </div>
+
+    <div class="filter">
+        <ui5-label type="date" for="orderDueDate" show-colon>Order Due Date</ui5-label>
+        <ui5-date-picker value="" id="orderDueDate"></ui5-date-picker>            
+    </div>
+    
+</div>
+
+
+<ui5-tabcontainer class="full-width">
+	<ui5-tab text="All" selected>
+	</ui5-tab>
+	<ui5-tab text="P3">
+	</ui5-tab>
+	<ui5-tab text="P2">
+	</ui5-tab>
+	<ui5-tab text="P1">
+	</ui5-tab>
+	<ui5-tab text="Errors for Review">
+	</ui5-tab>
+	<ui5-tab text="Errors for Review"></ui5-tab>
+	<ui5-tab text="In Planning"></ui5-tab>
+	<ui5-tab text="Work Order for Review"></ui5-tab>
+	<ui5-tab text="Ready"></ui5-tab>
+	<ui5-tab text="Complete"></ui5-tab>
+	<ui5-tab text="Planned"></ui5-tab>
+	<ui5-tab text="Corrective"></ui5-tab>
+
+</ui5-tabcontainer>
 <ui5-table class="demo-table" id="table">
 	<!-- Columns -->
 	<ui5-table-column slot="columns" style="width: 12rem">
