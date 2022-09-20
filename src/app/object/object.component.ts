@@ -10,6 +10,7 @@ import "@ui5/webcomponents/dist/Tab.js";
   templateUrl: './object.component.html',
   styleUrls: ['./object.component.scss']
 })
+
 export class ObjectComponent implements OnInit {
 
   constructor() { }
