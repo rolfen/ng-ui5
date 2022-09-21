@@ -5,6 +5,7 @@
 </div>
 
 <div class="filters">
+    
     <div class="filter">
         <ui5-label for="workOrderNumber" show-colon>Work Order Number</ui5-label>
         <ui5-input value="" id="workOrderNumber"></ui5-input>    
@@ -50,6 +51,11 @@
 </ui5-tabcontainer>
 <ui5-table class="demo-table" id="table">
 	<!-- Columns -->
+
+    <ui5-table-column slot="columns" style="width: 12rem">
+		<ui5-checkbox></ui5-checkbox>
+	</ui5-table-column>
+
 	<ui5-table-column slot="columns" style="width: 12rem">
 		<span style="line-height: 1.4rem">Product</span>
 	</ui5-table-column>
@@ -71,6 +77,7 @@
 	</ui5-table-column>
 
 	<ui5-table-row [routerLink]="['/item', 1]">
+        <ui5-table-cell><ui5-checkbox></ui5-checkbox></ui5-table-cell>
 		<ui5-table-cell>Notebook Basic 15HT-1000</ui5-table-cell>
 		<ui5-table-cell>Very Best Screens</ui5-table-cell>
 		<ui5-table-cell>30 x 18 x 3cm</ui5-table-cell>
@@ -79,7 +86,8 @@
 	</ui5-table-row>
 
 	<ui5-table-row [routerLink]="['/item', 2]">
-		<ui5-table-cell>Notebook Basic 17HT-1001</ui5-table-cell>
+        <ui5-table-cell><ui5-checkbox></ui5-checkbox></ui5-table-cell>
+        <ui5-table-cell>Notebook Basic 17HT-1001</ui5-table-cell>
 		<ui5-table-cell>Very Best Screens</ui5-table-cell>
 		<ui5-table-cell>29 x 17 x 3.1cm</ui5-table-cell>
 		<ui5-table-cell>4.5KG</ui5-table-cell>
@@ -87,6 +95,7 @@
 	</ui5-table-row>
 
 	<ui5-table-row [routerLink]="['/item', 3]">
+        <ui5-table-cell><ui5-checkbox></ui5-checkbox></ui5-table-cell>
 		<ui5-table-cell>Notebook Basic 18HT-1002</ui5-table-cell>
 		<ui5-table-cell>Very Best Screens</ui5-table-cell>
 		<ui5-table-cell>28 x 19 x 2.5cm</ui5-table-cell>
