@@ -5,7 +5,7 @@ import { ObjectComponent } from './object/object.component';
 import { AppComponent } from './app.component';
 
 import { RouterModule, Routes } from '@angular/router';
-import { ODataModule } from 'angular-odata';
+import { ODataModule, ApiConfig } from 'angular-odata';
 import { ODataBackendService } from './o-data-backend.service';
 
 
@@ -14,8 +14,9 @@ const appRoutes: Routes = [
   { path: 'item/:id', component: ObjectComponent },
 ];
 
-const oDataSettings = {
-  serviceRootUrl: 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW/'
+const oDataSettings: ApiConfig = {
+  serviceRootUrl: 'https://services.odata.org/V2/(S(cnqkn3twkxnupuslkhmbwq1h))/OData/OData.svc/',
+  version: '2.0'
 };
 
 @NgModule({

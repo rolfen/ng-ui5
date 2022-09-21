@@ -10,7 +10,10 @@ import { ODataBackendService } from './o-data-backend.service';
 export class AppComponent {
 
   constructor(oDataBackendService : ODataBackendService) { 
-    oDataBackendService.query();
+    console.dir(oDataBackendService);
+    oDataBackendService.query().subscribe((data) => {
+      console.log(data);
+    });
   }
   title = 'ngwc';
 }

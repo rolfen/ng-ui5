@@ -11,12 +11,12 @@ export class ODataBackendService {
   query() : Observable<any> {
 
     // Use OData Service Factory
-    let airportsService = this.factory.entitySet(
-      "Airports",
-      "Microsoft.OData.SampleService.Models.TripPin.Airport"
+    let dataService = this.factory.entitySet(
+      "Products"
+      // ,"Microsoft.OData.SampleService.Models.TripPin.Airport"
     );
-    let airports = airportsService.entities();
-    return airports.fetch();
+    let data = dataService.entities();
+    return data.fetch();
   }
 
 }
