@@ -4,6 +4,7 @@ import "@ui5/webcomponents/dist/TabSeparator.js";
 import "@ui5/webcomponents/dist/Tab.js";
 
 
+import { ODataBackendService } from '../o-data-backend.service';
 
 @Component({
   selector: 'app-object',
@@ -13,7 +14,12 @@ import "@ui5/webcomponents/dist/Tab.js";
 
 export class ObjectComponent implements OnInit {
 
-  constructor() { }
+  product : any;
+
+  constructor(private oDataBackendService : ODataBackendService) {
+
+  }
+
 
   ngOnInit(): void {
   }

@@ -64,27 +64,24 @@
 		<span style="line-height: 1.4rem">Supplier</span>
 	</ui5-table-column>
 
-	<ui5-table-column slot="columns" min-width="600" popin-text="Dimensions" demand-popin>
-		<span style="line-height: 1.4rem">Dimensions</span>
-	</ui5-table-column>
-
 	<ui5-table-column slot="columns" min-width="600" popin-text="Weight" demand-popin>
-		<span style="line-height: 1.4rem">Weight</span>
+		<span style="line-height: 1.4rem">Rating</span>
 	</ui5-table-column>
 
 	<ui5-table-column slot="columns">
 		<span style="line-height: 1.4rem">Price</span>
 	</ui5-table-column>
 
-	<ui5-table-row [routerLink]="['/item', 1]">
+
+	<ui5-table-row *ngFor="let product of products" [routerLink]="['/item', product.ID]">
         <ui5-table-cell><ui5-checkbox></ui5-checkbox></ui5-table-cell>
-		<ui5-table-cell>Notebook Basic 15HT-1000</ui5-table-cell>
-		<ui5-table-cell>Very Best Screens</ui5-table-cell>
-		<ui5-table-cell>30 x 18 x 3cm</ui5-table-cell>
-		<ui5-table-cell>4.2KG</ui5-table-cell>
-		<ui5-table-cell>956EUR</ui5-table-cell>
+		<ui5-table-cell>{{product.Name}}</ui5-table-cell>
+		<ui5-table-cell>{{product.Description}}</ui5-table-cell>
+		<ui5-table-cell>{{product.Rating}}</ui5-table-cell>
+		<ui5-table-cell>{{product.Price}}</ui5-table-cell>
 	</ui5-table-row>
 
+	<!--
 	<ui5-table-row [routerLink]="['/item', 2]">
         <ui5-table-cell><ui5-checkbox></ui5-checkbox></ui5-table-cell>
         <ui5-table-cell>Notebook Basic 17HT-1001</ui5-table-cell>
@@ -102,4 +99,6 @@
 		<ui5-table-cell>4.2KG</ui5-table-cell>
 		<ui5-table-cell>1570EUR</ui5-table-cell>
 	</ui5-table-row>
+
+	-->
 </ui5-table>

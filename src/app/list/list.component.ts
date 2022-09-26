@@ -22,13 +22,18 @@ import { ODataBackendService } from '../o-data-backend.service';
 })
 export class ListComponent implements OnInit {
 
-  constructor(oDataBackendService : ODataBackendService) { 
-    oDataBackendService.getProducts().subscribe((d) => {
-      console.dir(d);
-    });
+  products = [] as Array<any>;
+
+  constructor(private oDataBackendService : ODataBackendService) { 
+
   }
 
   ngOnInit(): void {
+
+    this.oDataBackendService.getProducts().subscribe((d : any) => {
+      this.products = d.d.results;
+    });
+
   }
 
 }
