@@ -7,13 +7,10 @@ import { ODataBackendService } from './o-data-backend.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
 
+export class AppComponent {
   constructor(oDataBackendService : ODataBackendService) { 
-    console.dir(oDataBackendService);
-    oDataBackendService.query().subscribe((data) => {
-      console.log(data);
-    });
+    oDataBackendService.query();
   }
   title = 'ngwc';
 }
