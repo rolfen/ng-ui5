@@ -15,9 +15,6 @@ export class ODataBackendService {
 
   query() {
 
-    // return this.http.get(this.url);
-
-    // const data1 = await o('https://services.odata.org/V2/(S(cnqkn3twkxnupuslkhmbwq1h))/OData/OData.svc/Products')
 
   }
 
@@ -26,7 +23,7 @@ export class ODataBackendService {
   }
 
   getProduct(id : number) {
-
+    return this.http.get(this.productsUrl + '(' + id + ')');
   }
 
 

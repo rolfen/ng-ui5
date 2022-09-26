@@ -1,16 +1,17 @@
+
+<ui5-title level="H3">
+	{{product.Name}}
+</ui5-title>
 <ui5-tabcontainer class="full-width">
-	<ui5-tab text="Table">
+	<ui5-tab text="Description" selected>
+		<ui5-label>{{product.Description}}</ui5-label>
 	</ui5-tab>
-	<ui5-tab text="What's new" selected>
-		<ui5-label>Ipsum What's New</ui5-label>
-	</ui5-tab>
-	<ui5-tab text="Who are we">
-		<ui5-label>This is who we are</ui5-label>
-	</ui5-tab>
-	<ui5-tab text="About">
-		<ui5-label>Blah blah blah</ui5-label>
-	</ui5-tab>
-	<ui5-tab text="Contacts">
-		<ui5-label>42 Nowhat Street</ui5-label>
+	<ui5-tab text="Details">
+		<ui5-label> 
+			<h4>Price</h4>
+			<p>{{product.Price}}</p>
+			<h4>Rating</h4>
+			<p>{{product.Rating}}</p>
+		</ui5-label>
 	</ui5-tab>
 </ui5-tabcontainer>
