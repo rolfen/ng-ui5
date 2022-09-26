@@ -1,21 +1,33 @@
 import { Injectable } from '@angular/core';
-import { ODataClient, ODataServiceFactory } from "angular-odata";
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
+
+
 
 
 @Injectable({providedIn: 'root'})
 export class ODataBackendService {
-  constructor(private factory: ODataServiceFactory) { }
+  
+  private productsUrl = 'https://services.odata.org/V2/(S(cnqkn3twkxnupuslkhmbwq1h))/OData/OData.svc/Products';
+
+
+  constructor(private http: HttpClient) { }
+
+
   query() {
-    // Use OData Service Factory
-    let dataService = this.factory.entitySet(
-      "Products"
-      // ,"Microsoft.OData.SampleService.Models.TripPin.Airport"
-    );
-    let data = dataService.entities();
-    data.fetch().subscribe(({ entities }) => { 
-      console.log(entities); 
-    });
+
+    // return this.http.get(this.url);
+
+    // const data1 = await o('https://services.odata.org/V2/(S(cnqkn3twkxnupuslkhmbwq1h))/OData/OData.svc/Products')
+
   }
+
+  getProducts() {
+    return this.http.get(this.productsUrl);
+  }
+
+  getProduct(id : number) {
+
+  }
+
 
 }

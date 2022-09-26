@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ODataBackendService } from './o-data-backend.service';
 
 
 @Component({
@@ -9,8 +8,6 @@ import { ODataBackendService } from './o-data-backend.service';
 })
 
 export class AppComponent {
-  constructor(oDataBackendService : ODataBackendService) { 
-    oDataBackendService.query();
-  }
+  constructor(){}
   title = 'ngwc';
 }

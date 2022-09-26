@@ -12,6 +12,7 @@ import "@ui5/webcomponents/dist/TabContainer.js";
 import "@ui5/webcomponents/dist/TabSeparator.js";
 import "@ui5/webcomponents/dist/Tab.js";
 
+import { ODataBackendService } from '../o-data-backend.service';
 
 
 @Component({
@@ -21,7 +22,11 @@ import "@ui5/webcomponents/dist/Tab.js";
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(oDataBackendService : ODataBackendService) { 
+    oDataBackendService.getProducts().subscribe((d) => {
+      console.dir(d);
+    });
+  }
 
   ngOnInit(): void {
   }

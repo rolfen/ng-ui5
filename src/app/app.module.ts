@@ -5,19 +5,17 @@ import { ObjectComponent } from './object/object.component';
 import { AppComponent } from './app.component';
 
 import { RouterModule, Routes } from '@angular/router';
-import { ODataModule, ApiConfig } from 'angular-odata';
 import { ODataBackendService } from './o-data-backend.service';
 
+import { HttpClientModule } from  '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },
   { path: 'item/:id', component: ObjectComponent },
 ];
 
-const oDataSettings: ApiConfig = {
-  serviceRootUrl: 'https://services.odata.org/V2/(S(cnqkn3twkxnupuslkhmbwq1h))/OData/OData.svc/',
-  version: '2.0'
-};
+ //  serviceRootUrl: 'https://services.odata.org/V2/(S(cnqkn3twkxnupuslkhmbwq1h))/OData/OData.svc/',
+ // version: '2.0'
 
 @NgModule({
   declarations: [
@@ -28,8 +26,8 @@ const oDataSettings: ApiConfig = {
   imports: [
     BrowserModule,
     RouterModule,
-    RouterModule.forRoot(appRoutes),
-    ODataModule.forRoot(oDataSettings)
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
