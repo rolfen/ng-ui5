@@ -30,7 +30,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.oDataBackendService.getProducts().subscribe((d : any) => {
+    this.oDataBackendService.getPRs().subscribe((d : any) => {
       this.products = d.d.results;
     });
 

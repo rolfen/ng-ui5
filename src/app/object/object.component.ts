@@ -34,7 +34,7 @@ export class ObjectComponent implements OnInit {
       this.activatedRoute.params.subscribe( params => {
         // this.routeParams = params;
         // console.dir(params['id']);
-        this.oDataBackendService.getProduct(parseInt(params['id'])).subscribe((d : any) => {
+        this.oDataBackendService.getPR(parseInt(params['id'])).subscribe((d : any) => {
           console.dir(d)
           this.product = d.d;
         });
